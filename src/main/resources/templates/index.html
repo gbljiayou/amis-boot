@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>AMIS快速开发平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet"
+          href="https://houtai.baidu.com/v2/csssdk">
+    <style>
+        html, body, .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+
+<script src="https://houtai.baidu.com/v2/jssdk"></script>
+<script type="text/javascript">
+    (function() {
+        var amis = amisRequire('amis/embed');
+        amis.embed('#root',
+            {
+            "$schema": "https://houtai.baidu.com/v2/schemas/page.json#",
+            "type": "page",
+            "title": "这是标题部分",
+            "subTitle": "这是子标题",
+            "remark": "这是小提示信息",
+            "aside": {
+                "type": "page",
+                "title": "菜单",
+                "body": {
+                    "type": "nav",
+                    "stacked": true,
+                    "className": "w-md",
+                    "links": [
+                        {
+                            "label": "Nav 1",
+                            "to": "/docs/index",
+                            "icon": "fa fa-user",
+                            "active": true
+                        },
+                        {
+                            "label": "Nav 2",
+                            "to": "/docs/api"
+                        },
+                        {
+                            "label": "Nav 3",
+                            "to": "/docs/renderers"
+                        }
+                    ]
+                }
+            },
+            "body": [{
+                "type": "chart",
+                "api": "https://houtai.baidu.com/api/mock2/chart/chart",
+                "interval": 500
+                },
+                {
+                    "type": "carousel",
+                    "controlTheme": "dark",
+                    "height": "300",
+                    "animation": "slide",
+                    "options": [
+                        {
+                            "image": "https://video-react.js.org/assets/poster.png"
+                        },
+                        {
+                            "html": "<div style=\"width: 100%; height: 300px; background: #e3e3e3; text-align: center; line-height: 300px;\">carousel data</div>"
+                        },
+                        {
+                            "image": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3893101144,2877209892&fm=23&gp=0.jpg"
+                        }
+                    ]
+                }],
+            "toolbar": "这是工具栏部分"
+        }
+        );
+    })();
+</script>
+</body>
+</html>

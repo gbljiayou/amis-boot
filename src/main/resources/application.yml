@@ -1,0 +1,11 @@
+spring:
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/**,classpath:/static/**,classpath:/public/
